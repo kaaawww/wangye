@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图测试</title>   
+    </head>
+    <style>
+.box{
+    border:1px solid black;
+    width: 1000px;
+    margin: 0 auto;
+    height:1020px;
+}
+
+#hr1 {
+    background-color: cadetblue;
+    height: 2px;
+    width: 75%;
+}
+
+
+.imgbox {
+    border-top: 5px solid cadetblue;
+    width: 60%;
+    height: 40%;
+    margin: 0 auto;
+}
+
+.img {
+    width: 1000px;
+    height: 400px;
+    margin: 0 auto;
+    display: none;
+}
+.box_article{
+    margin: 0 auto;
+	text-indent: 35px;
+	font-size: 20px;
+}
+.font{
+    padding-left: 400px;
+	line-height: 50px;
+	font-size: 6px;
+	text-align: center;
+    height: 50px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.flex{
+    display: flex;
+}
+a{
+    width: 200px;
+    height: 50px;
+    background-color: aqua;
+}
+
+
+    </style>
+    <body>
+       <div class="box">
+        <div>
+            <a href="./home.html">首页</a>
+            <a href="./cv.html">个人介绍</a>
+            <a href="./dl.html">登录</a>
+        </div>
+        <div class="imgBox">
+            <img class="img-slide img" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg" alt="img1">
+            <img class="img-slide img" src="./img/logo1.jpg" alt="img2">
+            <img class="img-slide img" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg" alt="img3">
+            <img class="img-slide img" src="./img/logo1.jpg" alt="img4">
+            <img class="img-slide img" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg" alt="img5">
+        </div>
+            
+                 <div class="box_one">
+                     <h3>大山</h3>
+                     <div class="flex">
+                         <img style="width: 300px;height:100px;" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg">
+                         <p>风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽</p>
+                     </div>
+                     
+                 <div class="box_one">
+                    <h3>大山</h3>
+                    <div class="flex">
+                        <img style="width: 300px;height:100px;" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg">
+                        <p>风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽</p>
+                    </div>
+                </div>
+                <div class="box_one">
+                    <h3>大山</h3>
+                    <div class="flex">
+                        <img style="width: 300px;height:100px;" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg">
+                        <p>风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽</p>
+                    </div>
+                </div>
+                <div class="box_one">
+                    <h3>大山</h3>
+                    <div class="flex">
+                        <img style="width: 300px;height:100px;" src="./img/ffb82cbb80bc4b0be0af7958f878866.jpg">
+                        <p>风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽风景秀丽</p>
+                    </div>
+                </div>
+                <div class="font">
+                    <h2>金煜  计算机科学与技术 19967325448</h2>
+                </div>
+       </div>
+    </body>
+    
+    <script type="text/javascript">
+        var index = 0, len;
+        // 获取一个元素数组
+        var imgBox = document.getElementsByClassName("img-slide");
+        len = imgBox.length;
+        imgBox[index].style.display = 'block';
+        function slideShow() {
+            index ++;
+            // 防止数组溢出
+            if(index >= len) index = 0;
+            // 遍历每一个元素
+            for(var i=0; i<len; i++) {
+                imgBox[i].style.display = 'none';
+            }
+            // 每次只有一张图片显示
+            imgBox[index].style.display = 'block';
+        }
+        
+        // 定时器3s切换图片
+        setInterval(slideShow, 3000);
+        
+    </script>
+    
+</html>

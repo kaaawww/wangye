@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    width: 1000px;
+        margin: 0 auto;
+        height:1020px;
+}
+a{
+width: 200px;
+height: 50px;
+background-color: aqua;
+}
+#text{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 200px;
+}
+form{
+    width: 500px;					
+    margin: 40px auto auto auto;	
+    font-size: 15px;
+}
+input{
+    height: 30px;
+    width: 12em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+</style>
+
+<body>
+    <div>
+        <a href="./home.html">首页</a>
+        <a href="./cv.html">个人介绍</a>
+        <a href="./dl.html">登录</a>
+    </div>
+  <form>
+      <table>
+          <tr>
+              <td>请输入账号：</td>
+              <td><input type="text" id="username" name="username" placeholder="用邮箱注册" onblur="validate_username(this.value)"/></td>
+              <td id="test_user"></td>
+          </tr>
+          <tr>
+              <td>请输入密码：</td>
+              <td><input type="password" id="password" name="password" placeholder="6位密码由数字和字母组成" onblur="validate_password(this.value)"/></td>
+              <td id="test_pw"></td>
+          </tr>
+          <tr>
+              <td>请确认密码：</td>
+              <td><input type="password" id="password2" name="password2" onblur="validate_password2(this.value)" /></td>
+              <td id="is_test_pw"></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td ><input type="submit" id="submit_form" value="注册" onclick="return validate_form()"/>
+          </tr>
+      </table>
+  </form>
+   <form>
+      <table>
+          <tr>
+              <td>请输入账号：</td>
+              <td><input type="text" id="username" name="username" placeholder="用邮箱注册" onblur="validate_username(this.value)"/></td>
+              <td id="test_user"></td>
+          </tr>
+          <tr>
+              <td>请输入密码：</td>
+              <td><input type="password" id="password3" name="password" placeholder="6位密码由数字和字母组成" onblur="validate_password(this.value)"/></td>
+              <td id="test_pww"></td>
+          </tr>
+          <tr>
+              <td>请确认密码：</td>
+              <td><input type="password" id="password4" name="password2" onblur="password2(this.value)" /></td>
+              <td id="is_test_pw"></td>
+          </tr>
+          <tr>
+              <td></td>
+              <td ><input type="submit" id="submit_form" value="登录" onclick="return validate_form()"/>
+          </tr>
+      </table>
+  </form>
+</body>
+<script>
+  
+ 	//验证密码是否符合要求
+  	function validate_password(password){
+  		var passwordReg=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6}$/;
+  		if(password != "" && password.search(passwordReg) != -1)
+  		{
+  			document.getElementById("test_pw").innerHTML = "<font color='green' size='3px'>√密码格式正确</font>";
+  		}else{
+  			document.getElementById("test_pw").innerHTML = "<font color='red' size='3px'>密码格式错误</font>";
+  			alert("密码有6位，由数字和字母组成!");
+              return false;
+  		}
+  	}
+      //验证密码是否符合要求
+  	function password(password){
+  		var passwordReg=/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6}$/;
+  		if(password3 != "" && password3.search(passwordReg) != -1)
+  		{
+  			document.getElementById("test_pww").innerHTML = "<font color='green' size='3px'>√密码格式正确</font>";
+  		}else{
+  			document.getElementById("test_pww").innerHTML = "<font color='red' size='3px'>密码格式错误</font>";
+  			alert("密码有6位，由数字和字母组成!");
+              return false;
+  		}
+  	}
+  	
+	//验证两次输入的密码是否一样
+  	 function validate_password2(password2){
+  		var password = document.getElementById("password").value;
+  		if (password == ""){
+			document.getElementById("is_test_pw").innerHTML = "<font color='red' size='3px'>密码不为空</font>";
+		}else if(password==password2){
+  			document.getElementById("is_test_pw").innerHTML = "<font color='green' size='3px'>√两次输入的密码相同</font>";
+  		}else{
+  			document.getElementById("is_test_pw").innerHTML = "<font color='red' size='3px'>两次输入的密码不相同</font>";
+  			alert.log("密码有6位，由数字和字母组成!");
+              return false;
+  		}
+  	} 
+</script>
+</html>
